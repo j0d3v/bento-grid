@@ -32,7 +32,13 @@ p {
   max-inline-size: 95%;
   margin: 3rem auto;
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
+
+  @media (width > 375px) {
+    max-inline-size: 90%;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(3, 30vh);
+  }
 }
 .container img {
   max-width: 100%;
@@ -50,6 +56,10 @@ p {
   text-align: center;
   place-items: center;
   row-gap: 0.5rem;
+  @media (width > 375px) {
+    font-size: 1.5rem;
+    grid-column: 2 / span 2;
+  }
 }
 .container div:first-child h1 {
   margin-bottom: 1rem;
@@ -59,6 +69,9 @@ p {
 }
 .container div:first-child img {
   max-width: 90%;
+  @media (width > 375px) {
+    max-width: 40%;
+  }
 }
 .container div:first-child p {
   font-size: 1.3rem;
@@ -68,20 +81,33 @@ p {
   box-shadow: 0px 0px 2px 1px hsl(0deg 0% 91% / 88%);
   padding: 1.5rem;
   row-gap: 1rem;
+  @media (width > 375px) {
+    overflow: hidden;
+  }
 }
 .container div:nth-child(2) img {
   order: -1;
   filter: drop-shadow(0px 0px 1rem hsla(0, 2%, 89%, 0.25));
   border-radius: 100vh;
+  @media (width > 375px) {
+    max-width: 150%;
+  }
 }
 .container div:nth-child(3) {
   grid-template-columns: auto auto;
   padding: 1.5rem 1.5rem 0;
   row-gap: 1rem;
   background-color: var(--yellow-500);
+  @media (width > 375px) {
+    grid-template-columns: auto;
+    overflow: hidden;
+  }
 }
 .container div:nth-child(3) h2 {
   grid-column: span 2;
+  @media (width > 375px) {
+    grid-column: span 1;
+  }
 }
 
 .container div:nth-child(4) {
@@ -89,7 +115,30 @@ p {
   padding: 1.5rem 1rem;
   text-align: center;
   row-gap: 1.25rem;
+  @media (width > 375px) {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    text-align: start;
+    align-items: center;
+    overflow: hidden;
+    padding: 2rem;
+  }
 }
+.container div:nth-child(4) h2 {
+  @media (width > 375px) {
+    font-size: 2rem;
+  }
+}
+.container div:nth-child(4) img {
+  @media (width > 375px) {
+    max-width: 130%;
+    min-width: 100%;
+    aspect-ratio: 1;
+    transform: translateX(1rem);
+  }
+}
+
 .container div:nth-child(4) p {
   padding-inline: 0.35rem;
   font-size: 20px;
@@ -104,6 +153,15 @@ p {
   text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
+  @media (width > 375px) {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: start;
+    padding: 1rem;
+    row-gap: 1rem;
+    grid-column: 3 / span 2;
+    grid-row: 3;
+  }
 }
 .container div:nth-child(5) img {
   order: -1;
@@ -114,9 +172,16 @@ p {
   box-shadow: 0px 0px 2px 1px hsl(0deg 0% 91% / 88%);
   padding: 1.5rem;
   row-gap: 1rem;
+
+  @media (width > 375px) {
+    grid-template-columns: auto;
+  }
 }
 .container div:nth-child(6) h2 {
   grid-column: span 2;
+  @media (width > 375px) {
+    grid-column: span 1;
+  }
 }
 .container div:nth-child(6) p:first-of-type {
   font-weight: 500;
@@ -132,6 +197,11 @@ p {
   background-color: var(--yellow-100);
   row-gap: 1.75rem;
   padding: 2.25rem;
+  @media (width > 375px) {
+    grid-template-columns: auto;
+    grid-row: 1;
+    margin-bottom: -10vh;
+  }
 }
 .container div:nth-child(7) h2 {
   grid-column: span 2;
@@ -139,6 +209,10 @@ p {
   line-height: 2.25rem;
   span {
     color: var(--purple-500);
+    font-style: italic;
+  }
+  @media (width > 375px) {
+    grid-column: span 1;
   }
 }
 .container div:last-child {
@@ -146,10 +220,28 @@ p {
   background-color: var(--yellow-500);
   padding: 1.75rem;
   row-gap: 1.25rem;
+  @media (width > 375px) {
+    grid-template-columns: auto;
+    align-content: space-between;
+    justify-items: center;
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    margin-top: 10vh;
+  }
+}
+.container div:last-child img {
+  @media (width > 375px) {
+    max-width: 75%;
+  }
 }
 
 .container div:last-child h2 {
   grid-column: span 2;
   font-size: 2.15rem;
   line-height: 2rem;
+  @media (width > 375px) {
+    grid-column: span 1;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
 }
